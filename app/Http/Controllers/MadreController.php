@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Madres extends Controller
+class MadreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,7 @@ class Madres extends Controller
     public function index()
     {
         //
+        return "muestra todas las madres";
     }
 
     /**
@@ -25,7 +26,8 @@ class Madres extends Controller
      */
     public function create()
     {
-        //
+        //questions/creare
+        return "formulario para la creación de madre";
     }
 
     /**
@@ -36,7 +38,8 @@ class Madres extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //POST madres
+        return Redirect::route('madres.index');
     }
 
     /**
@@ -47,7 +50,8 @@ class Madres extends Controller
      */
     public function show($id)
     {
-        //
+        //GET madres/id
+        return "Información de una madre";
     }
 
     /**
@@ -58,7 +62,8 @@ class Madres extends Controller
      */
     public function edit($id)
     {
-        //
+        //GET madres/id/edit
+        return "muestra el formulario para modificar una maadre";   
     }
 
     /**
@@ -70,7 +75,8 @@ class Madres extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //PUT/PATCH /madre/id
+
     }
 
     /**
@@ -81,6 +87,6 @@ class Madres extends Controller
      */
     public function destroy($id)
     {
-        //
+        //DELETE madres/id
     }
 }

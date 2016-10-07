@@ -15,6 +15,15 @@ class CreateMadresTable extends Migration
     {
         Schema::create('madres', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('dni');
+            $table->string('nombres');
+            $table->string('apellidos');
+            $table->integer('celular');
+            $table->integer('celular_acompanate');
+            $table->date('fecha_parto');
+            $table->string('historia');
+            $table->string('historia_familiar');
+            $table->boolean('bienvenida');
             $table->timestamps();
         });
     }
