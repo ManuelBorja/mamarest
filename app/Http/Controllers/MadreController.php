@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Auth;
+use App\Madre;
+
 class MadreController extends Controller
 {
     /**
@@ -15,8 +18,13 @@ class MadreController extends Controller
      */
     public function index()
     {
-        //
-        return "muestra todas las madres";
+        //Muestra todas las madres
+
+        $madres = Madre::get();
+        return response()->json([
+            "msg" => "Ok",
+            "madres" => $madres->toArray() 
+            ],200);
     }
 
     /**
@@ -39,7 +47,27 @@ class MadreController extends Controller
     public function store(Request $request)
     {
         //POST madres
-        return Redirect::route('madres.index');
+
+        $dni = $request->dni;
+        $nombres = $request->nombres;
+        $apellidos = $request->apellidos;
+        $celular = $request->celular;
+        $celular_acompanante = $request->celular_acompanante;
+        $fecha_parto = $request->fecha_parto;
+        $historia = $request->historia;
+        $historia_familiar = $request->historia_familiar;
+
+        return Madre::create([
+            'dni' => $dni,
+            'nombres' => $nombres,
+            'apellidos' => $apellidos,
+            'celular' => $celular,
+            'celular_acompanante' => $celular_acompanante,
+            'fecha_parto' => $fecha_parto,
+            'historia' => $historia,
+            'historia_familiar' => $historia_familiar,
+            'user_id' => Auth::guard('api')->id()
+        ]);
     }
 
     /**
@@ -51,7 +79,11 @@ class MadreController extends Controller
     public function show($id)
     {
         //GET madres/id
-        return "Información de una madre";
+        $madre = Madre::where('id', $id)->first();
+        return response()->json([
+            "msg" => "Ok",
+            "madres" => $madre->toArray() 
+            ],200);
     }
 
     /**
