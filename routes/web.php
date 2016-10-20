@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
-Route::resource('madres','MadreController');
+Route::get('/madres','MadreController@madres');
+Route::get('/madre/create','MadreController@create');

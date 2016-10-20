@@ -28,21 +28,34 @@ class MadreController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function madres()
+    {
+        //Muestra todas las madres
+
+        return view('madre.madres');
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //questions/creare
-        return "formulario para la creación de madre";
+        //questions/create
+        return view('madre.form');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Ilsluminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -108,6 +121,23 @@ class MadreController extends Controller
     public function update(Request $request, $id)
     {
         //PUT/PATCH /madre/id
+        $madre = Madre::find($id);
+
+        $madre->dni = $request->dni;
+        $madre->nombres = $request->nombres;
+        $madre->apellidos = $request->apellidos;
+        $madre->celular = $request->celular;
+        $madre->celular_acompanante = $request->celular_acompanante;
+        $madre->fecha_parto = $request->fecha_parto;
+        $madre->historia = $request->historia;
+        $madre->historia_familiar = $request->historia_familiar;
+
+        $madre->save();
+
+        return response()->json([
+            "msg" => "Ok",
+            "madres" => $madre->toArray() 
+            ],200);        
 
     }
 
