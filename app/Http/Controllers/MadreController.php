@@ -79,7 +79,7 @@ class MadreController extends Controller
             'fecha_parto' => $fecha_parto,
             'historia' => $historia,
             'historia_familiar' => $historia_familiar,
-            'user_id' => Auth::guard('api')->id()
+            'user_id' => 1//Auth::guard('api')->id()
         ]);
     }
 
