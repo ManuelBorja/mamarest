@@ -3,15 +3,14 @@
 @section('content')
 <div class="container">
 
-    <form class="form-inline">
+    <form class="form-inline frm-busca">
         <div class="form-group">
             <input type="text" class="form-control" id="nombre" placeholder="Buscar por DNI">
-        </div>
-        <div class="form-group">
             <input type="text" class="form-control" id="dni" placeholder="Buscar por nombre">
+            <button type="submit" class="btn btn-primary">Buscar</button>
         </div>
-        <button type="submit" class="btn btn-primary">Buscar</button>
     </form>
+
     <div class="form-grooup">
         <a class="btn btn-danger btn-lg btn-block" href="{{url('madre/create')}}">Nuevo</a>
     </div>

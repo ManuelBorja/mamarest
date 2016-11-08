@@ -1,0 +1,17 @@
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px 15px;
+  width: auto;
+}
+
+.frm-busca{
+  padding: 21px 15px;
+}
+
+.form-control#dni{
+  width: 300px;
+}

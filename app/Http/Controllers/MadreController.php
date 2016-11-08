@@ -36,7 +36,7 @@ class MadreController extends Controller
     {
         //Muestra todas las madres
 
-        return view('madre.madres');
+        return view('madre.lista');
     }
 
 

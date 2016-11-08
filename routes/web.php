@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/madres','MadreController@madres');
+Route::get('/madre','MadreController@madres');
 Route::get('/madre/create','MadreController@create');
 Route::post('/madre/store','MadreController@store');

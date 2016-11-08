@@ -37,14 +37,16 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'MAMA') }}
+                            <!--  config('app.name', 'MAMA') }} Scripts -->
+                        <img src="img/logo-progobernabilidad.jpg" alt="Programa MAMA" >
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ url('/madre') }}">Madres</a></li>
+                        <li><a href="{{ url('/options') }}">Opciones</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
