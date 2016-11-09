@@ -19,11 +19,11 @@ class CreateMadresTable extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->integer('celular');
-            $table->integer('celular_acompanate');
+            $table->integer('celular_acompanante');
             $table->date('fecha_parto');
             $table->string('historia');
             $table->string('historia_familiar');
-            $table->boolean('bienvenida');
+            $table->boolean('bienvenida')->default(1);
             $table->timestamps();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

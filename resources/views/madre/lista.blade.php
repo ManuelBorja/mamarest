@@ -23,13 +23,15 @@
                 <th></th>
                 <th></th>
             </tr>
+        @foreach ($madres as $madre)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $madre->apellidos }}, {{ $madre->nombres }}</td>
+                <td>{{ $madre->fecha_parto }}</td>
+                <td>{{ $madre->historia }}</td>
                 <td></td>
                 <td></td>
             </tr>
+        @endforeach 
         </table>
     </div>
     

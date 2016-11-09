@@ -35,8 +35,8 @@ class MadreController extends Controller
     public function madres()
     {
         //Muestra todas las madres
-
-        return view('madre.lista');
+        $madres = Madre::get();
+        return view('madre.lista', ['madres' => $madres]);
     }
 
 
